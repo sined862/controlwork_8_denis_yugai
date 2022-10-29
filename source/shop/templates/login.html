@@ -1,0 +1,33 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 col-xl-12 mx-5">
+        <h2 class="m-3">Авторизация: </h2>
+        <form class="m-3" action="" method="POST">
+            {% csrf_token %}
+            <div class="input-group mt-4 mb-4">
+                <span class="input-group-text" id="inputGroup-sizing-default">{{ form.username.label }}: </span>
+                {{ form.username }}
+            </div>
+            {% for error in form.username.errors %}
+            <div><p class="text-danger">{{ error }}</p></div>
+            {% endfor %}
+
+            <div class="input-group mt-4 mb-4">
+                <span class="input-group-text" id="inputGroup-sizing-default">{{ form.password.label }}: </span>
+                {{ form.password }}
+            </div>
+            {% for error in form.password.errors %}
+            <div><p class="text-danger">{{ error }}</p></div>
+            {% endfor %}
+            <button type="submit" class="btn btn-secondary ms-2 ps-3 pe-3 mt-4">Войти</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

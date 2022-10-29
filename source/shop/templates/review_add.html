@@ -1,0 +1,16 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}
+    Добавление отзыва
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 col-xl-12 mx-5">
+        <h2 class="m-3">Добавить отзыв: </h2>
+        <form class="m-3" action="" method="POST">
+            {% include 'partial/form_review.html' with button_text='Добавить' %}
+        </form>
+    </div>
+</div>
+{% endblock %}

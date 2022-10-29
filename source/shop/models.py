@@ -37,6 +37,9 @@ class Product(models.Model):
         default='plug/nophoto.png'
     )
 
+    def __str__(self) -> str:
+        return self.title
+
 
 class Review(models.Model):
     author = models.ForeignKey(
