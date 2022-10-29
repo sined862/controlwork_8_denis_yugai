@@ -4,9 +4,10 @@ from shop.forms import ProductForm, ReviewForm
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import redirect, render, get_object_or_404
 from django.db.models import Avg
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class ProductView(DetailView):
+class ProductView(LoginRequiredMixin, DetailView):
     template_name = 'product.html'
     model = Product
     extra_context = {'choices': CategoryChoices.choices}
@@ -16,7 +17,6 @@ class ProductView(DetailView):
         form_review = ReviewForm
         print(self.object.id)
         avg_rating = Review.objects.filter(product=self.object.id).aggregate(avg=Avg('rating'))
-        print(f'AVGGG - {avg_rating}')
         context['avg_rating'] = avg_rating
         context['form_review'] = form_review
         return context
@@ -32,7 +32,7 @@ class ProductView(DetailView):
             return redirect('product', pk=product.id)
         return reverse('product', kwargs={'pk': product.id})
 
-class ProductAddView(CreateView):
+class ProductAddView(LoginRequiredMixin, CreateView):
     template_name = 'product_create.html'
     model = Product
     form_class = ProductForm
@@ -42,7 +42,7 @@ class ProductAddView(CreateView):
         return reverse('product', kwargs={'pk': self.object.pk})
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'product_update.html'
     model = Product
     form_class = ProductForm
@@ -52,7 +52,7 @@ class ProductUpdateView(UpdateView):
         return reverse('product', kwargs={'pk': self.object.pk})
 
 
-class ProductDelView(DeleteView):
+class ProductDelView(LoginRequiredMixin, DeleteView):
     template_name = 'confirm_delete.html'
     model = Product
 
@@ -60,7 +60,7 @@ class ProductDelView(DeleteView):
         return reverse('product_del', kwargs={'pk': self.object.pk})
 
 
-class ProductDelConfirmView(DeleteView):
+class ProductDelConfirmView(LoginRequiredMixin, DeleteView):
     template_name = 'confirm_delete.html'
     model = Product
     success_url = reverse_lazy('index')

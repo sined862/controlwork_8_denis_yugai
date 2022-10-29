@@ -11,9 +11,16 @@ class UserRegisterForm(UserCreationForm):
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
 
-class UserLoginForm(AuthenticationForm):
-    username = forms.CharField(label='Логин')
-    password = forms.PasswordInput()
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        required=True,
+        label='Логин'
+    )
+    password = forms.CharField(
+        required=True,
+        label='Пароль',
+        widget=forms.PasswordInput
+    )
 
 
 class ProductForm(forms.ModelForm):

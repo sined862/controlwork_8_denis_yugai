@@ -20,7 +20,13 @@
                 <a class="nav-link ms-2" href="{% url 'product_add' %}">ДОБАВИТЬ ТОВАР</a>
               </li>
             </ul>
-            <a class="" href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a> 
+            {% if user.is_authenticated %}
+            <h6 class="me-3">{{ user.username }}
+            <h6><a href="{% url 'profile' user.pk %}">Личный кабинет</a> | </h6> 
+            <h6> <a href="{% url 'logout' %}">Выйти</a></h6> 
+            {% else %}
+            <a href="{% url 'register' %}">регистрация</a> | <a href="{% url 'login' %}">вход</a> 
+            {% endif %}
             {% block menu %}
             {% endblock %}
           </div>

@@ -16,7 +16,7 @@
     "title": "Ноутбук DELL G15 5511",
     "description": "Процессор: Intel Core i5\r\nМодель процессора: 11260H\r\nЧастота процессора, ГГц: 2.6\r\nОбъем оперативной памяти, ГБ: 16\r\nКонфигурация оперативной памяти: 2 х 8 ГБ\r\nЖесткий диск: HDD нет\r\nТвердотельный накопитель: 512 ГБ SSD\r\nИнтегрированная в процессор графика: Intel UHD Graphics\r\nМодель дискретной видеокарты: GeForce RTX 3050\r\nДиагональ экрана, дюйм: 15.6\r\nРазрешение экрана: 1920 x 1080 Full HD",
     "category": "notebook",
-    "image": "images/165168_1.jpg"
+    "image": "plug/nophoto.png"
   }
 },
 {
@@ -26,17 +26,7 @@
     "title": "Ноутбук ASUS VivoBook 16X X1603ZA",
     "description": "Процессор: Intel Core i7\r\nМодель процессора: 12700H\r\nЧастота процессора, ГГц: 2.3\r\nОбъем оперативной памяти, ГБ: 16\r\nКонфигурация оперативной памяти: 8 ГБ + 8 ГБ (распаяно на плате)\r\nЖесткий диск: HDD нет\r\nТвердотельный накопитель: 512 ГБ SSD\r\nИнтегрированная в процессор графика: Intel Iris Xe Graphics\r\nДиагональ экрана, дюйм: 16\r\nРазрешение экрана: 1920 x 1200 WUXGA\r\nUSB Type-C Power Delivery: Нет",
     "category": "notebook",
-    "image": "images/165019_01.jpg"
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 4,
-  "fields": {
-    "title": "Смартфон Tecno Camon 19 Pro",
-    "description": "Размер экрана, дюйм: 6.8\r\nРазрешение экрана: 2460 x 1080\r\nОбъем оперативной памяти: 8 ГБ\r\nОбъем встроенной памяти: 128 ГБ\r\nМодель процессора: Helio G96\r\nЧастота процессора: 2.05 ГГц + 2.0 ГГц\r\nОсновная камера, Мп: 64 + 50 + 2\r\nФронтальная камера, Мп: 32\r\nБеспроводные интерфейсы: Wi-Fi, Bluetooth, NFC\r\nЕмкость аккумулятора: 5000 мАч",
-    "category": "smartphone",
-    "image": "images/151549_1.jpg"
+    "image": "plug/nophoto.png"
   }
 },
 {
@@ -46,7 +36,7 @@
     "title": "Смартфон Xiaomi 12T",
     "description": "Размер экрана, дюйм: 6.67\r\nРазрешение экрана: 2712 x 1220\r\nТип матрицы: CrystalRes AMOLED\r\nОбъем оперативной памяти: 8 ГБ\r\nОбъем встроенной памяти: 256 ГБ\r\nМодель процессора: Dimensity 8100-Ultra\r\nЧастота процессора: 2.85 ГГц + 2.0 ГГц\r\nОсновная камера, Мп: 108 + 8 + 2\r\nФронтальная камера, Мп: 20\r\nБеспроводные интерфейсы: Wi-Fi, Bluetooth, NFC, IrDA\r\nЕмкость аккумулятора: 5000 мАч",
     "category": "smartphone",
-    "image": "images/0000162992.jpg"
+    "image": "plug/nophoto.png"
   }
 },
 {
@@ -56,7 +46,67 @@
     "title": "Смартфон POCO M5",
     "description": "Размер экрана, дюйм: 6.58\r\nРазрешение экрана: 2408 x 1080\r\nОбъем оперативной памяти: 4 ГБ\r\nОбъем встроенной памяти: 64 ГБ\r\nМодель процессора: Helio G99\r\nЧастота процессора: 2.2 ГГц + 2.0 ГГц\r\nОсновная камера, Мп: 50 + 2 + 2\r\nФронтальная камера, Мп: 5\r\nБеспроводные интерфейсы: Wi-Fi, Bluetooth, NFC, IrDA\r\nЕмкость аккумулятора: 5000 мАч",
     "category": "smartphone",
-    "image": "images/165054_01.jpg"
+    "image": "plug/nophoto.png"
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 6,
+    "text": "asdasdasd",
+    "rating": 4
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "product": 6,
+    "text": "dqweqweasd",
+    "rating": 5
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "product": 6,
+    "text": "asdasdsa",
+    "rating": 4
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 5,
+  "fields": {
+    "author": 3,
+    "product": 5,
+    "text": "фывфывфыв",
+    "rating": 4
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 6,
+  "fields": {
+    "author": 3,
+    "product": 5,
+    "text": "asdasdsaad",
+    "rating": 2
+  }
+},
+{
+  "model": "shop.review",
+  "pk": 7,
+  "fields": {
+    "author": 3,
+    "product": 6,
+    "text": "asdadasdas",
+    "rating": 3
   }
 }
 ]

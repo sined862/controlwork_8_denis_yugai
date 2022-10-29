@@ -2,7 +2,8 @@
 from shop.views.base import IndexView
 from shop.views.products import ProductView, ProductAddView, ProductUpdateView, ProductDelView, ProductDelConfirmView
 from shop.views.reviews import ReviewUpdateView, ReviewDelView, ReviewDelConfirmView
-from shop.views.accounts import register_user, login_user
+from shop.views.accounts import register_user, LoginView, logout_view, ProfileView
+
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
@@ -15,5 +16,7 @@ urlpatterns = [
     path('del_r/<int:pk>', ReviewDelView.as_view(), name='review_del'),
     path('del_confirm_r/<int:pk>', ReviewDelConfirmView.as_view(), name='review_del_confirm'),
     path('register/', register_user, name='register'),
-    path('login/', login_user, name='login')
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
 ]
